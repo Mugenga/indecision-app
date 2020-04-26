@@ -1,0 +1,35 @@
+/* Counter */
+
+let count = 0;
+const addOne = () => {
+    count++;
+    renderCounterApp();
+};
+const minusOne = () => {
+    count--;
+    renderCounterApp();
+};
+const reset = () => {
+    count=0;
+    renderCounterApp();
+};
+
+/* End of Counter */
+
+const appRoot = document.getElementById('app');
+// Render App
+
+const renderCounterApp = () => {
+    const templateTwo = (
+        <div>
+            <h1>Count: {count}</h1>
+            <button onClick={minusOne}>-1</button>
+            <button onClick={reset}>Reset</button>
+            <button onClick={addOne}>+1</button>   
+        </div>
+    );
+    ReactDOM.render(templateTwo, appRoot);
+};
+
+// Using A function to 
+renderCounterApp();
